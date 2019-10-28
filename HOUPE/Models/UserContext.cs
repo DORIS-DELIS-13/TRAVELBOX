@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace HOUPE.Models
 {
-    public class UserContext: DbContext
+    public class UserContext : IdentityDbContext<User, UserRole, string>
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> User { get; set; }
         public DbSet<UsersImage> UsersImages { get; set; }
         public DbSet<UsersRoom> UsersRooms { get; set; }
         public DbSet<Tour> Tours { get; set; }
@@ -28,7 +29,9 @@ namespace HOUPE.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Ignore<User>();
+            base.OnModelCreating(modelBuilder);
+            
+          //  modelBuilder.Ignore<User>();
            // modelBuilder.Ignore<UsersImage>();
 
             // modelBuilder.ApplyConfiguration(new UserConfiguration());

@@ -13,10 +13,10 @@ namespace HOUPE.Models
         public int Enterteiment { get; set; }
         public string Excitement { get; set; }
 
-        public int UsersId { get; set; }
+        public string UsersId { get; set; }
         public int HotelsId { get; set; }
 
-        public User Users { get; set; }
+        public virtual User Users { get; set; }
         public Hotel Hotels { get; set; }
     }
 }

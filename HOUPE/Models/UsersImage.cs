@@ -10,7 +10,7 @@ namespace HOUPE.Models
         public int Id { get; set; }
         public string ImageAdress { get; set; }
 
-        public int UserId { get; set; }
-        public User Users { get; set; }
+        public string UserId { get; set; }
+        public virtual User Users { get; set; }
     }
 }

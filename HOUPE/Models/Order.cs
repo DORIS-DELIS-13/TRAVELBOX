@@ -13,8 +13,8 @@ namespace HOUPE.Models
         public double TotalCost { get; set; }
 
         public int HotelsId { get; set; }
-        public int UsersId { get; set; }
-        public User Users { get; set; }
+        public string UsersId { get; set; }
+        public virtual User Users { get; set; }
         public Hotel Hotels { get; set; }
     }
 }
