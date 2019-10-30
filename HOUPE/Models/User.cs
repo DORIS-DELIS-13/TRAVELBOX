@@ -13,6 +13,7 @@ namespace HOUPE.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public bool Type { get; set; }
+        public string UserStatus { get; set; }
 
         public virtual UsersImage UsersImages { get; set; }
         public virtual UsersRoom UsersRooms { get; set; }
